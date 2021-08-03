@@ -1,0 +1,44 @@
+﻿@model IEnumerable<InsuranceClaimsHandlingApp.Models.LossTypes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <h1 class="d-inline-block">LossTypes - @TempData["user"]</h1>
+    <a href="@Url.Action("LogOut", "LossTypes")" class="float-right">
+        <span class="btn btn-danger">Logout</span>
+    </a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LossTypeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LossTypeCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LossTypeDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LossTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LossTypeCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LossTypeDescription)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
